@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/* CSS Document */
+* {
+/*border: 1px solid gray;*/
+}
+
+
+
+.container {
+display: flex;
+/*display: inline-flex;*/
+/*flex-direction: row;*/
+/*flex-wrap: wrap;*/
+flex-flow: row wrap;
+justify-content: space-between;
+}
+.item {
+width: 200px;
+height: 100px;
+margin: 1em;
+border: 1px solid red;
+background-color: darkgray;
+text-align: center;
+flex-grow: 0;
+}
+nav {
+/*width: 200px;*/
+margin: 0px 20px 0px 0px;
+}
+.my-column {
+flex: 1;
+}
+/* LESS THAN 600px; */
+@media screen and (max-width: 600px) {
+.container {
+flex-direction: column;
+}
+.item {
+width: 100%;
+order: 4;
+}
+.class9 {
+order: 1;
+}
+.class8 {
+order: 2;
+}
+.class7 {
+order: 3;
+}
+}
+/*39_flexBoxMenu.css Example*/
+.navigation {
+list-style: none;
+margin: 0;
+background: deepskyblue;
+/*FLEX*/
+display: flex;
+justify-content: flex-end;
+/*these aren't need as they're the defaults*/
+/*flex-direction: row;*/
+/*flex-wrap: nowrap;*/
+/*flex-flow: row nowrap;*/
+}
+.navigation a {
+text-decoration: none;
+display: block;
+padding: 1em;
+color: white;
+}
+.navigation a:hover {
+background: cornflowerblue;
+}
+@media all and (max-width: 600px) {
+.navigation {
+/*FLEX*/
+flex-direction: column;
+padding: 0;
+}
+.navigation a {
+text-align: center;
+padding: 10px;
+border-top: 1px solid rgba(255,255,255,0.3);
+border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.navigation li:last-of-type a {
+border-bottom: none;
+}
+}
+/*
+.old_list li {
+display: inline;
+}*/
+/*
+flex --> flex-grow, flex-shrink, flex-basis
+flex-shrink and flex-basis are optional
+Default --> 0 1 auto
+FLEX GROW
+expressed using a number
+used to determine how much a flex item will grow relative to the rest of the flex items inside the container.
+If every flex item has a flex grow of one for example, each item would be the same size.
+If flex grow is not defined for an item, it defaults to one.
+FLEX SHRINK
+expressed using a number
+determines how much a flex item will shrink relative to other flex items inside the container.
+it defaults to one if you leave it off.
+FLEX BASIS
+expressed using the same values you would use for an element's width:
+pixels, percentages, any length, the key word auto
+This value is then used as the initial, main size, of an element
+before any remaining free space has been distributed.
+If you leave it off, the initial value is assumed to be zero.
+IN PRACTICE
+In most cases, you won't be setting all three values.
+Usually, I see either
+a single flex grow value
+or a combination of flex grow and flex basis
+If you want a list of common values and how they affect an item's flexibility,
+check out the section on the flex property in the W3C flexbox specification.
+*/
+
+   
